@@ -1,3 +1,4 @@
+> Куликов Михаил Юрьевич M3100
 # CodeHelper
 This extension can improve your productivity of writing CPP code
 ## Features
