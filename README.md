@@ -81,3 +81,6 @@ int main()
 ## Release Notes
 ### 0.0.1
 Initial release of beta-version CodeHelper
+
+### 0.0.2
+Fixed bug with ';' before function call for void

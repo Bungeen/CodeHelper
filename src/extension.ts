@@ -57,7 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
 				const functionDefinition = `\n${functionType} ${functionName}(${functionArgs}) {\n\t${text}\n\n \treturn${functionType === 'void' ? ';' : ` ${functionType}();`}\n}\n`;
 				vscode.env.clipboard.writeText(functionDefinition);
 				const position = editor.selection.active;
-				const functionCall = `${functionType === 'void' ? ';' : `${functionType} result = `}${functionName}(/*--Args--*/);`;
+				const functionCall = `${functionType === 'void' ? '' : `${functionType} result = `}${functionName}(/*--Args--*/);`;
 				editor.edit(editBuilder => {
 					editBuilder.insert(position, functionCall);
 					editBuilder.delete(selection);
