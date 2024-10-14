@@ -1,0 +1,77 @@
+{
+  "name": "CodeHelper",
+  "displayName": "CodeHelper",
+  "description": "It can help you to write a code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCompletion"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "cpp",
+        "aliases": [
+          "C++",
+          "CPP"
+        ],
+        "extensions": [
+          ".cpp"
+        ],
+        "configuration": "cpp"
+      }
+    ],
+    "commands": [
+      {
+        "command": "CodeHelper.ExtractFunction",
+        "title": "Extract function from code"
+      }
+    ],
+    "completionItemProvider": {
+      "language": "cpp",
+      "when": "editorTextFocus"
+    },
+    "keybindings": [
+      {
+          "command": "CodeHelper.ScrollDown",
+          "key": "down",
+          "when": "editorTextFocus"
+      },
+      {
+        "command": "CodeHelper.ScrollUp",
+        "key": "up",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "CodeHelper.ExtractFunction",
+        "key": "ctrl+shift+q",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.94.0",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.11.1",
+    "typescript": "^5.6.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
